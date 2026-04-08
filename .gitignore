@@ -1,0 +1,19 @@
+# Never commit secrets
+.env
+*.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+venv/
+env/
+
+# Logs (optional — you may want to commit these)
+tweet_log.json
+cron.log
+
+# OS
+.DS_Store
+Thumbs.db
