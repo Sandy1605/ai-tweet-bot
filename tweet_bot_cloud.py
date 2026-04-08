@@ -394,13 +394,12 @@ def main():
     try:
         tweet = generate_tweet(trend, persona)
         print(f"  Result ({len(tweet)} chars):\n  {tweet}\n")
-    except requests.exceptions.ConnectionError:
-        print("ERROR: Ollama not running! Run: ollama serve")
+    except requests.exceptions.HTTPError as e:
+        print(f"ERROR: Groq API error: {e}")
         return
-    except requests.exceptions.ReadTimeout:
-        print("ERROR: Ollama timed out. Is phi3 downloaded?")
+    except Exception as e:
+        print(f"ERROR generating tweet: {e}")
         return
-
     # Step 3: Image (every 3rd tweet)
     with_image = args.force_image or should_post_image()
     image_path = None
