@@ -28,7 +28,7 @@ CONFIG = {
     "groq": {
         "url":   "https://api.groq.com/openai/v1/chat/completions",
         "key":   os.getenv("GROQ_API_KEY", ""),
-        "model": "llama3-8b-8192",
+        "model": "llama-3.1-8b-instant",
     },
     "feeds": [
         ("https://news.google.com/rss/search?q=stock+market+investing+today&hl=en&gl=US&ceid=US:en", "finance"),
